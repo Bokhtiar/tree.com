@@ -1,10 +1,27 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Images } from '../../utils/images'
 
+
 export const Navbar = () => {
+
+  const [navBg, setNavBg] = useState(false);
+  console.log("s",navBg);
+  const changeNavBg = () => {
+    window.scrollY >= 300 ? setNavBg(true) : setNavBg(false);
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeNavBg);
+    return () => {
+      window.removeEventListener('scroll', changeNavBg);
+    }
+  }, [])
+  
+  // sticky top - 0 z - 50
   return <>
-    <div className="bg-base-100">
-      <div className='navbar container'>
+    <div className="bg-base-100 sticky top-0 z-50">
+      <div className={navBg === true ? "navbar  bg-green-50 " : "navbar"}>
         {/* responsive navbar start */}
         <div className="navbar-start">
           <div className="dropdown">
