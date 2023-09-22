@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import { Images } from '../../utils/images'
 
-export const Product = () => {
+export const Product = (props) => {
     return <>
-        <div className='shadow rounded-xl my-2'>
+        <div className='shadow rounded-xl my-2 relative'>
             <img src={Images.Logo} style={{ width: "100%" }} className='mx-auto h-42' alt="" />
-            <div className='px-4'>
+            <div className='px-4  '>
                 <h3 className=' font-heading md:text-[13px] text-[11px] text-primary'>Mango tree</h3>
 
                 <div className="flex items-center space-x-1 md:py-1 py-2">
@@ -28,9 +28,20 @@ export const Product = () => {
 
                 <div className='flex items-center justify-between mb-3'>
                     <h3 className=' font-heading md:text-[11px] text-[8px]'>400TK</h3>
-                    <Link to="" className=' border rounded-lg px-2 font-heading md:text-[11px] md: text-[8px] py-1'>Add To Card</Link>
+                    <Link to="" className=' border rounded-lg px-2 font-heading md:text-[11px] md: text-[8px] py-1 border-primary'>Add To Card</Link>
                 </div>
-
+ 
+                {/* love */}
+                <p className='absolute right-0 inset-y-0 p-3  '>
+                    {
+                        props.love === "true" ? <img src={Images.Love} className='h-6 w-6' alt="" /> : <span class=" text-gray-500 material-symbols-outlined">
+                            favorite
+                        </span>
+                    }
+                    
+                    
+                    
+                </p>
             </div>
         </div>
     </>

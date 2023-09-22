@@ -5,7 +5,7 @@ export const Footer = () => {
     return <>
         <section className="bg-green-50">
             <footer className=" md:py-20 py-10  text-base-content container">
-                
+
                 <div className="grid grid-cols-2 md:grid-cols-4 justify-between   ">
                     <aside className="mx-auto col-span-4 md:col-span-1">
                         <img src={Images.Logo} className="h-16 mx-auto" alt="" />

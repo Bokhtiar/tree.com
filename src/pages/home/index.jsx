@@ -100,26 +100,26 @@ export const Home = () => {
 
                     {/* product list */}
                     <section className='grid grid-cols-2 md:grid-cols-5 gap-4 my-4'>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
-                        <Product></Product>
+                        <Product love="true"></Product>
+                        <Product love="false"></Product>
+                        <Product love="true"></Product>
+                        <Product love="false"></Product>
+                        <Product love="false"></Product>
+                        <Product love="false"></Product>
+                        <Product love="false"></Product>
+                        <Product love="false"></Product>
+                        <Product love="false"></Product>
+                        <Product love="false"></Product>
+                        <Product love="false"></Product>
+                        <Product love="true"></Product>
+                        <Product love="false"></Product>
+                        <Product love="false"></Product>
+                        <Product love="false"></Product>
+                        <Product love="false"></Product>
+                        <Product love="false"></Product>
+                        <Product love="false"></Product>
+                        <Product love="false"></Product>
+                        <Product love="false"></Product>
                         
                     </section>
                 </div>
