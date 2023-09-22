@@ -1,6 +1,6 @@
 import { Images } from '../../utils/images'
-import { PrimaryButton, WatchButton } from '../../components/button'
 import { Product } from '../../components/product'
+import { PrimaryButton, WatchButton } from '../../components/button'
 
 export const Home = () => {
     return <>
@@ -80,8 +80,8 @@ export const Home = () => {
 
         {/* product start desing start here */}
         <div className='bg-gray-100 my-16'>
-            <section className='container py-5'>
-                <div className='p-5 bg-white'>
+            <section className='container py-16'>
+                <div className='p-5 bg-white py-4'>
                     {/* div header */}
                     <div className='flex items-center justify-between'>
                         <span className=' font-heading text-primary text-md md:text-xl'>Special Product for you</span>
@@ -112,10 +112,84 @@ export const Home = () => {
                         <Product></Product>
                         <Product></Product>
                         <Product></Product>
+                        <Product></Product>
+                        <Product></Product>
+                        <Product></Product>
+                        <Product></Product>
+                        <Product></Product>
+                        <Product></Product>
+                        <Product></Product>
+                        <Product></Product>
+                        
                     </section>
                 </div>
             </section>
         </div>
         {/* product start desing end here */}
+
+        {/* service start here */}
+        <section className='container'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                <div className=' col-span-1'>
+                    <img src={Images.Delivery} className='h-[450px] w-full rounded' alt="" />
+                </div>
+                <div className='col-span-1 my-auto '>
+                    <h2 className=' font-heading text-2xl md:text-3xl'>Our Service & Benefits</h2>
+                    <p className=' text-justify font-content leading-4 py-3'>In botany, a tree is a perennial plant with an elongated stem, or trunk, usually supporting branches and leaves. In some usages, the definition of a tree</p>
+                    <div className='grid grid-cols-1 md:grid-cols-2'>
+                        <div className=' col-span-1 flex items-center gap-1'>
+                            <span class=" text-gray-500 material-symbols-outlined">
+                                copy_all
+                            </span>
+                            <span className=' text-gray-500 font-content text-sm font-semibold'>asdfasdf asfasdfasdfasf adf</span>
+                        </div>
+                        {/* end of row */}
+                        <div className=' col-span-1 flex items-center gap-1'>
+                            <span class=" text-gray-500 material-symbols-outlined">
+                                copy_all
+                            </span>
+                            <span className=' text-gray-500 font-content text-sm font-semibold'>asdfasdf asfasdfasdfasf adf</span>
+                        </div>
+                        {/* end of row */}
+
+                        <div className=' col-span-1 flex items-center gap-1'>
+                            <span class=" text-gray-500 material-symbols-outlined">
+                                copy_all
+                            </span>
+                            <span className=' text-gray-500 font-content text-sm font-semibold'>asdfasdf asfasdfasdfasf adf</span>
+                        </div>
+                        {/* end of row */}
+
+                        <div className=' col-span-1 flex items-center gap-1'>
+                            <span class=" text-gray-500 material-symbols-outlined">
+                                copy_all
+                            </span>
+                            <span className=' text-gray-500 font-content text-sm font-semibold'>asdfasdf asfasdfasdfasf adf</span>
+                        </div>
+                        {/* end of row */}
+                        <div className=' col-span-1 flex items-center gap-1'>
+                            <span class=" text-gray-500 material-symbols-outlined">
+                                copy_all
+                            </span>
+                            <span className=' text-gray-500 font-content text-sm font-semibold'>asdfasdf asfasdfasdfasf adf</span>
+                        </div>
+                        {/* end of row */}
+                        <div className=' col-span-1 flex items-center gap-1'>
+                            <span class=" text-gray-500 material-symbols-outlined">
+                                copy_all
+                            </span>
+                            <span className=' text-gray-500 font-content text-sm font-semibold'>asdfasdf asfasdfasdfasf adf</span>
+                        </div>
+                        {/* end of row */}
+
+                        
+                    </div>
+                    <div className='my-3'>
+                        <PrimaryButton></PrimaryButton>
+                    </div>
+                </div>
+            </div>  
+        </section>
+        {/* service end here */}
     </>
 }
