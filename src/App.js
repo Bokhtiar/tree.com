@@ -4,6 +4,7 @@ import { MainLayout } from "./layouts/main.layout";
 import { Navigate, useRoutes } from "react-router-dom";
 
 export const App = () => {
+
   const mainRoutes = {
     path: "/",
     element: <MainLayout />,
