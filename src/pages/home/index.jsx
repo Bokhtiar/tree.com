@@ -9,7 +9,7 @@ export const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className="col-span-1 my-auto">
                     <h2 className=' font-heading text-5xl text-primary text-center md:text-left'>TREE.COM</h2>
-                    <p className='my-3 text-xl font-semibold leading-[20px] font-content text-justify'>This quote emphasizes the importance of taking action and planting trees for the benefit of the environment.</p>
+                    <p className='my-3 text-xl font-semibold leading-[20px] font-content text-justify text-gray-500'>This quote emphasizes the importance of taking action and planting trees for the benefit of the environment.</p>
                     <div className='flex items-center gap-4 justify-center md:justify-start'>
                         <PrimaryButton />
                         <WatchButton />
@@ -120,7 +120,6 @@ export const Home = () => {
                         <Product love="false"></Product>
                         <Product love="false"></Product>
                         <Product love="false"></Product>
-                        
                     </section>
                 </div>
             </section>

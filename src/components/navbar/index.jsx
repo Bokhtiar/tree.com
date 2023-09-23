@@ -32,7 +32,7 @@ export const Navbar = () => {
                 <li><Link to="" className='font-content font-semibold'>Home</Link></li>
                 <li><Link to="shop" className='font-content font-semibold'>Shop </Link></li>
                 <li><Link to="about" className='font-content font-semibold'>About </Link></li>
-                <li><Link to="about" className='font-content font-semibold'>Contact </Link></li>
+                <li><Link to="contact" className='font-content font-semibold'>Contact </Link></li>
               </ul>
             </div>
             <Link className="">
@@ -47,7 +47,7 @@ export const Navbar = () => {
               <li><Link to="" className='font-content font-semibold'>Home</Link></li>
               <li><Link to="shop" className='font-content font-semibold'>Shop </Link></li>
               <li><Link to="about" className='font-content font-semibold'>About </Link></li>
-              <li><Link to="about" className='font-content font-semibold'>Contact </Link></li>
+              <li><Link to="contact" className='font-content font-semibold'>Contact </Link></li>
             </ul>
           </div>
           {/* all divice navbar end */}

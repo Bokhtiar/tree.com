@@ -9,9 +9,9 @@ export const Footer = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 justify-between   ">
                     <aside className="mx-auto col-span-4 md:col-span-1">
                         <img src={Images.Logo} className="h-16 mx-auto" alt="" />
-                        <p className=" font-content font-semibold text-center">Tree.com <br />Providing reliable tech since 1992</p>
+                        <p className=" font-content font-semibold text-center"><span className=" font-heading text-primary">Tree.com</span> <br />Providing reliable tech since 1992</p>
                     </aside>
-                    <div className=" col-span-1 my-5 md:my-0">
+                    <div className=" col-span-1 mt-5 md:my-0">
                         <header className="font-heading text-primary">Services</header>
                         <ul className="">
                             <li>
@@ -28,7 +28,7 @@ export const Footer = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className="col-span-1 my-5 md:my-0">
+                    <div className="col-span-1 mt-5 md:my-0">
                         <header className="font-heading text-primary">Company</header>
                         <ul>
                             <li>
@@ -45,7 +45,7 @@ export const Footer = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className=" col-span-1 my-5 md:my-0">
+                    <div className=" col-span-1 mt-5 md:my-0">
                         <header className="font-heading text-primary">Legal</header>
                         <ul>
                             <li>
