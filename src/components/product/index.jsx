@@ -30,7 +30,7 @@ export const Product = (props) => {
                     <h3 className=' font-heading md:text-[11px] text-[8px]'>400TK</h3>
                     <Link to="" className=' border rounded-lg px-2 font-heading md:text-[11px] md: text-[8px] py-1 border-primary'>Add To Card</Link>
                 </div>
- 
+
                 {/* love */}
                 <p className='absolute right-0 inset-y-0 p-3  '>
                     {
@@ -38,9 +38,6 @@ export const Product = (props) => {
                             favorite
                         </span>
                     }
-                    
-                    
-                    
                 </p>
             </div>
         </div>

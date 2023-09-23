@@ -30,7 +30,7 @@ export const Navbar = () => {
               </label>
               <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                 <li><Link to="" className='font-content font-semibold'>Home</Link></li>
-                <li><Link to="about" className='font-content font-semibold'>Shop </Link></li>
+                <li><Link to="shop" className='font-content font-semibold'>Shop </Link></li>
                 <li><Link to="about" className='font-content font-semibold'>About </Link></li>
                 <li><Link to="about" className='font-content font-semibold'>Contact </Link></li>
               </ul>
@@ -45,7 +45,7 @@ export const Navbar = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
               <li><Link to="" className='font-content font-semibold'>Home</Link></li>
-              <li><Link to="about" className='font-content font-semibold'>Shop </Link></li>
+              <li><Link to="shop" className='font-content font-semibold'>Shop </Link></li>
               <li><Link to="about" className='font-content font-semibold'>About </Link></li>
               <li><Link to="about" className='font-content font-semibold'>Contact </Link></li>
             </ul>
@@ -106,3 +106,53 @@ export const Navbar = () => {
     </div>
   </>
 }
+
+
+// <div className="">
+//   <div className='flex items-center justify-between'>
+//     {/* <span className=' font-heading text-primary text-md md:text-xl'>Special Product for you</span> */}
+
+//     <div className="flex">
+//       <input type="text" className="w-full  border border-primary rounded-md py-1 px-4 md:w-96" placeholder="Search" name="" id="" />
+//       <button className="ml-[-35px] text-primary mt-2"><span class="material-symbols-outlined">
+//         search
+//       </span></button>
+//     </div>
+//     {/* 
+//                         <div className='flex items-center gap-1 text-primary'>
+//                             <span class="material-symbols-outlined">
+//                                 apps
+//                             </span>
+//                             <span class="material-symbols-outlined">
+//                                 window
+//                             </span>
+//                             <span class="material-symbols-outlined">
+//                                 grid_view
+//                             </span>
+//                         </div> */}
+//   </div>
+//   <section className='grid grid-cols-2 md:grid-cols-5 gap-4'>
+
+//     <Product love="true"></Product>
+//     <Product love="false"></Product>
+//     <Product love="true"></Product>
+//     <Product love="false"></Product>
+//     <Product love="false"></Product>
+//     <Product love="false"></Product>
+//     <Product love="false"></Product>
+//     <Product love="false"></Product>
+//     <Product love="false"></Product>
+//     <Product love="false"></Product>
+//     <Product love="false"></Product>
+//     <Product love="true"></Product>
+//     <Product love="false"></Product>
+//     <Product love="false"></Product>
+//     <Product love="false"></Product>
+//     <Product love="false"></Product>
+//     <Product love="false"></Product>
+//     <Product love="false"></Product>
+//     <Product love="false"></Product>
+//     <Product love="false"></Product>
+
+//   </section>
+// </div>

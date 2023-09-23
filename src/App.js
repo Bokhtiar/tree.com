@@ -1,4 +1,5 @@
 import { Home} from './pages/home';
+import { Shop } from './pages/shop';
 import { FourOFour } from "./pages/404";
 import { permittedRoutes } from "./routes";
 import { MainLayout } from "./layouts/main.layout";
@@ -12,6 +13,7 @@ export const App = () => {
     children: [
       { path: "*", element: <Navigate to="/404" /> },
       { path: "", element: <Home /> },
+      { path: "shop", element: <Shop /> },
       { path: "about", element: <>about</> },
       { path: "404", element: <FourOFour /> },
     ],
