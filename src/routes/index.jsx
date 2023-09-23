@@ -1,7 +1,8 @@
-import { Navigate } from "react-router-dom";
-import { DashboardLayout } from "../layouts/dashboard.layout";
-import { Cart } from "../components/cart";
-import { Wishlish } from "../components/wishlist";
+import {Order} from '../components/order'
+import { Cart } from "../components/cart"
+import { Navigate } from "react-router-dom"
+import { Wishlish } from "../components/wishlist"
+import { DashboardLayout } from "../layouts/dashboard.layout"
 
 const appRoutes = [
     {
@@ -12,6 +13,7 @@ const appRoutes = [
             { path: "", element: <>dashboard</> },
             { path: "cart", element: <Cart /> },
             { path: "wishlist", element: <Wishlish /> },
+            { path: "order", element: <Order /> },
             { path: "profile", element: <>profile</> },
         ],
     }, 

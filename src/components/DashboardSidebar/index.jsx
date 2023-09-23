@@ -40,7 +40,7 @@ export const DashboardSidebar = () => {
                 </div>
 
                 <div className="flex  items-center my-2">
-                    <Link to="" className="w-48 bg-white px-2 text-black font-content text-left flex gap-1 items-center rounded-md py-1">
+                    <Link to="/dashboard/order" className="w-48 bg-white px-2 text-black font-content text-left flex gap-1 items-center rounded-md py-1">
                         <span class="material-symbols-outlined text-gray-600">
                             list_alt
                         </span>
