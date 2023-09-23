@@ -84,7 +84,7 @@ export const Home = () => {
                 <div className='p-5 bg-white py-4'>
                     {/* div header */}
                     <div className='flex items-center justify-between'>
-                        <span className=' font-heading text-primary text-md md:text-xl'>Special Product for you</span>
+                        <span className=' font-heading text-primary text-md md:text-xl py-5'>Special Product for you</span>
                         <div className='flex items-center gap-1 text-primary'>
                             <span class="material-symbols-outlined">
                                 apps

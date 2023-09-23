@@ -13,7 +13,7 @@ export const Contact = () => {
                     {/* info card */}
                     <div className=''>
                         {/* card one start */}
-                        <div className='col-span-1 md:w-[250px] shadow-md mt-[-10px] md:mt-[0px] p-2 py-3  md:py-2'>
+                        <div className='col-span-1 md:w-[250px] shadow-md mt-[-10px] md:mt-[0px] p-2 py-3 mb-2 md:mb-0  md:py-2'>
                             <div className='flex items-center gap-2'>
                                 <img src={Images.Location} style={{ height: "50px", border: "1px solid green", marginTop: "5px" }}
                                     className='rounded opacity-90 p-3 ' alt="" />
@@ -26,7 +26,7 @@ export const Contact = () => {
                         {/* card one end */}
 
                         {/* card one start */}
-                        <div className='col-span-1 md:w-[250px] shadow-md mt-[-10px] md:mt-[0px] p-2 py-3  md:py-2'>
+                        <div className='col-span-1 md:w-[250px] shadow-md mt-[-10px] md:mt-[0px] p-2 py-3 mb-2 md:mb-0  md:py-2'>
                             <div className='flex items-center gap-2'>
                                 <img src={Images.Email} style={{ height: "50px", border: "1px solid green", marginTop: "5px" }}
                                     className='rounded opacity-90 p-3 ' alt="" />
@@ -39,7 +39,7 @@ export const Contact = () => {
                         {/* card one end */}
 
                         {/* card one start */}
-                        <div className='col-span-1 md:w-[250px] shadow-md mt-[-10px] md:mt-[0px] p-2 py-3  md:py-2'>
+                        <div className='col-span-1 md:w-[250px] shadow-md mt-[-10px] md:mt-[0px] p-2 py-3 mb-2 md:mb-0 md:py-2'>
                             <div className='flex items-center gap-2'>
                                 <img src={Images.Phone} style={{ height: "50px", border: "1px solid green", marginTop: "5px" }}
                                     className='rounded opacity-90 p-3 ' alt="" />

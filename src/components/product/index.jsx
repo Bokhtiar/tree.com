@@ -3,10 +3,10 @@ import { Images } from '../../utils/images'
 
 export const Product = (props) => {
     return <>
-        <div className='shadow rounded-xl my-2 relative'>
+        <div className='shadow rounded-xl my-2 relative bg-white'>
             <img src={Images.Logo} style={{ width: "100%" }} className='mx-auto h-42' alt="" />
             <div className='px-4  '>
-                <h3 className=' font-heading md:text-[13px] text-[11px] text-primary'>Mango tree</h3>
+                <h3 className=' font-heading md:text-[13px] text-[11px] text-primary'><Link to="/product/show/1">Mango Tree</Link></h3>
 
                 <div className="flex items-center space-x-1 md:py-1 py-2">
                     <svg className="w-3 h-3 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
