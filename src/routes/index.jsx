@@ -1,5 +1,7 @@
 import { Navigate } from "react-router-dom";
 import { DashboardLayout } from "../layouts/dashboard.layout";
+import { Cart } from "../components/cart";
+import { Wishlish } from "../components/wishlist";
 
 const appRoutes = [
     {
@@ -8,7 +10,8 @@ const appRoutes = [
         children: [
             { path: "*", element: <Navigate to="/404" /> },
             { path: "", element: <>dashboard</> },
-            { path: "cart", element: <>cdd</> },
+            { path: "cart", element: <Cart /> },
+            { path: "wishlist", element: <Wishlish /> },
             { path: "profile", element: <>profile</> },
         ],
     }, 
