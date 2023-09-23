@@ -3,7 +3,7 @@ import { Images } from '../../utils/images'
 
 export const Contact = () => {
     return <>
-        <section className="container my-5">
+        <section className="container my-12">
             <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* contact information */}
                 <div className=" col-span-1">
@@ -69,7 +69,7 @@ export const Contact = () => {
         </section>
 
         {/* service section */}
-        <section className='container'>
+        <section className='container my-5'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 <div className=' col-span-1'>
                     <img src={Images.Delivery1} className='md:h-[450px] h-[250px] w-full rounded' alt="" />
