@@ -2,6 +2,7 @@ import { Product } from "../../components/product"
 import { ProductSidebar } from "../../components/product-sidebar/product.sidebar"
 
 export const Shop = () => {
+
     return <>
         <section className="container">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4 my-5">
