@@ -7,10 +7,11 @@ const appRoutes = [
         element: <DashboardLayout />,
         children: [
             { path: "*", element: <Navigate to="/404" /> },
-            { path: "/dashboard", element: <>dashboard</> },
+            { path: "", element: <>dashboard</> },
+            { path: "cart", element: <>cdd</> },
             { path: "profile", element: <>profile</> },
         ],
-    },
+    }, 
 ];
 
 /* Generate permitted routes */
