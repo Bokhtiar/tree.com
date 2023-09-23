@@ -7,7 +7,7 @@ export const DashboardLayout = () => {
         <>
             <DashboardNavbar />
             <section className="container">
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-3 my-5">
                    <DashboardSidebar />
                     <div className=" col-span-4">
                         <Outlet />
