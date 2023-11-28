@@ -2,6 +2,29 @@ import { Link } from 'react-router-dom'
 import { Images } from '../../utils/images'
 
 export const Product = (props) => {
+
+    /** add to card */
+    const add_to_card = (product) => {
+        var cartProducts = JSON.parse(localStorage.getItem('carts')) || []
+        cartProducts.push(product);
+        console.log(cartProducts);
+        localStorage.setItem("carts", JSON.stringify(cartProducts));
+    }   
+    
+
+
+    const product1 = {
+        name: "mango tree",
+        price: "100",
+        qty: 1,
+    }
+
+    const product2 = {
+        name: "mango tree",
+        price: "100",
+        qty: 1,
+    }
+
     return <>
         <div className='shadow rounded-xl my-2 relative bg-white'>
             <img src={Images.Logo} style={{ width: "100%" }} className='mx-auto h-42' alt="" />
@@ -28,11 +51,11 @@ export const Product = (props) => {
 
                 <div className='flex items-center justify-between mb-3'>
                     <h3 className=' font-heading md:text-[11px] text-[8px]'>400TK</h3>
-                    <Link to="" className=' border rounded-lg px-2 font-heading md:text-[11px] md: text-[8px] py-1 border-primary'>Add To Card</Link>
+                    <span onClick={() => add_to_card(product1)} className=' border rounded-lg px-2 font-heading md:text-[11px] md: text-[8px] py-1 border-primary'>Add To Card</span>
                 </div>
 
                 {/* love */}
-                <p className='absolute right-0 inset-y-0 p-3  '>
+                <p onClick={() => add_to_card(product2)} className='absolute right-0 inset-y-0 p-3  '>
                     {
                         props.love === "true" ? <img src={Images.Love} className='h-6 w-6' alt="" /> : <span class=" text-gray-500 material-symbols-outlined">
                             favorite

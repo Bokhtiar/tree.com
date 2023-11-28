@@ -6,7 +6,6 @@ import { Images } from '../../utils/images'
 export const Navbar = () => {
 
   const [navBg, setNavBg] = useState(false);
-  console.log("s", navBg);
   const changeNavBg = () => {
     window.scrollY >= 300 ? setNavBg(true) : setNavBg(false);
   }
