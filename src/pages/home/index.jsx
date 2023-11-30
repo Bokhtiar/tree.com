@@ -4,29 +4,27 @@ import { Product } from '../../components/product'
 import { NetworkServices } from '../../network/index'
 import { networkErrorHandeller, numberToArray } from '../../utils/helper'
 import { PrimaryButton, WatchButton } from '../../components/button'
+import { ProductLoading } from '../../components/product/loading'
 
 export const Home = () => {
-
-
-    // number of records to show per page
     const size = 10;
-    // users data
     const [products, setProducts] = useState([])
-    // track page number 
-    const [page, setPage] = useState(0);
-    // total number of records 
+    const [page, setPage] = useState(1);
     const [count, setCount] = useState(0);
-    const [isLoading, setIsLoading] = useState()
+    const [isLoading, setIsLoading] = useState(false)
 
     /** fetch product */
     const fetchProduct = useCallback(async () => {
         try {
+            setIsLoading(true)
             const response = await NetworkServices.Product.index(page, size)
             if (response.status === 200) {
                 setProducts(response.data.data.data);
                 setCount(response.data.data.last_page);
+                setIsLoading(false)
             }
         } catch (error) {
+            setIsLoading(false)
             networkErrorHandeller(error)
         }
     }, [page])
@@ -133,26 +131,41 @@ export const Home = () => {
                     {/* product list */}
                     <section className='grid grid-cols-2 md:grid-cols-5 gap-4 my-4'>
                         {
+                            !isLoading ? 
                             products.map((product, i) => {
                                 return <Product key={i} {...product} ></Product>
-                            })
+                            }) 
+                                : <>
+                                    <ProductLoading />
+                                    <ProductLoading />
+                                    <ProductLoading />
+                                    <ProductLoading />
+                                    <ProductLoading />
+                                    <ProductLoading />
+                                    <ProductLoading />
+                                    <ProductLoading />
+                                    <ProductLoading />
+                                    <ProductLoading />  
+                                </>
                         }
                     </section>
 
                     <div className='flex items-center gap-2'>
-                        <button className=''
+
+                        <button
                             onClick={() => setPage(page - 1)}
+                            disabled={isLoading || page === 1}
                         >
-                        
-                            <span class="material-symbols-outlined">
+                            <span class="mt-[4px] material-symbols-outlined">
                                 chevron_left
                             </span>
                         </button>
+                        
                         <button
                         >
                             {
                                 numberToArray(count).map((num, i) => {
-                                    return <span className={num === page ? 'bg-red-300 border px-2' : 'border px-2'} onClick={() => setPage(num)}>{num}</span>
+                                    return <span className={num === page ? 'bg-green-500 text-white rounded border px-2' : 'border px-2'} onClick={() => setPage(num)}>{num}</span>
                                 })
                             }
                         </button>
@@ -160,7 +173,7 @@ export const Home = () => {
                             onClick={() => setPage(page + 1)}
                             disabled={isLoading || products.length < size}
                         >
-                            <span class="material-symbols-outlined">
+                            <span class="mt-[4px] material-symbols-outlined">
                                 chevron_right
                             </span>
                         </button>
