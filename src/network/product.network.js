@@ -1,7 +1,7 @@
 import {publicRequest} from '../config/axios.config'
 /* list of resource */
-export const index = async () => {
-    return await publicRequest.get('/products');
+export const index = async (page, size) => {
+    return await publicRequest.get(`/products?page=${page}&size=${size}`);
 };
 
 /* resource show */

@@ -35,3 +35,14 @@ export const networkErrorHandeller = (error) => {
 export const ImageShow = (image) => {
     return `http://localhost:8000/${image}`
 }
+
+/** number conver to array */
+export const numberToArray  = (item) => {
+    let number = []
+    for (let index = 1; index <= item; index++) {
+        const element = index;
+        number.push(index)
+        console.log(element);
+    }
+    return number
+}

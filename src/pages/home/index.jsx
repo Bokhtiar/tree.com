@@ -1,29 +1,39 @@
 import { Images } from '../../utils/images'
 import { useCallback, useEffect, useState } from 'react'
 import { Product } from '../../components/product'
-import {NetworkServices} from '../../network/index'
-import { networkErrorHandeller } from '../../utils/helper'
+import { NetworkServices } from '../../network/index'
+import { networkErrorHandeller, numberToArray } from '../../utils/helper'
 import { PrimaryButton, WatchButton } from '../../components/button'
 
 export const Home = () => {
+
+
+    // number of records to show per page
+    const size = 10;
+    // users data
     const [products, setProducts] = useState([])
+    // track page number 
+    const [page, setPage] = useState(0);
+    // total number of records 
+    const [count, setCount] = useState(0);
+    const [isLoading, setIsLoading] = useState()
 
     /** fetch product */
-    const fetchProduct = useCallback(async()=> {
+    const fetchProduct = useCallback(async () => {
         try {
-            const response = await NetworkServices.Product.index()
-           
+            const response = await NetworkServices.Product.index(page, size)
             if (response.status === 200) {
-                setProducts(response.data.data)
+                setProducts(response.data.data.data);
+                setCount(response.data.data.last_page);
             }
         } catch (error) {
             networkErrorHandeller(error)
         }
-    }, [])
+    }, [page])
 
-    useEffect(()=> {
+    useEffect(() => {
         fetchProduct()
-    },[])
+    }, [fetchProduct])
 
     return <>
         {/* banner section  start here */}
@@ -126,12 +136,39 @@ export const Home = () => {
                             products.map((product, i) => {
                                 return <Product key={i} {...product} ></Product>
                             })
-                            
                         }
-                        
                     </section>
+
+                    <div className='flex items-center gap-2'>
+                        <button className=''
+                            onClick={() => setPage(page - 1)}
+                        >
+                        
+                            <span class="material-symbols-outlined">
+                                chevron_left
+                            </span>
+                        </button>
+                        <button
+                        >
+                            {
+                                numberToArray(count).map((num, i) => {
+                                    return <span className={num === page ? 'bg-red-300 border px-2' : 'border px-2'} onClick={() => setPage(num)}>{num}</span>
+                                })
+                            }
+                        </button>
+                        <button
+                            onClick={() => setPage(page + 1)}
+                            disabled={isLoading || products.length < size}
+                        >
+                            <span class="material-symbols-outlined">
+                                chevron_right
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </section>
+
+
         </div>
         {/* product start desing end here */}
 
@@ -190,14 +227,14 @@ export const Home = () => {
                         </div>
                         {/* end of row */}
 
-                        
+
                     </div>
                     <div className='my-3 flex justify-center md:justify-start gap-2'>
                         <PrimaryButton></PrimaryButton>
                         <WatchButton></WatchButton>
                     </div>
                 </div>
-            </div>  
+            </div>
         </section>
         {/* service end here */}
     </>
