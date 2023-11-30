@@ -7,6 +7,7 @@ import { permittedRoutes } from "./routes";
 import { MainLayout } from "./layouts/main.layout";
 import { Navigate, useRoutes } from "react-router-dom";
 import { ProductShow } from './components/product/show';
+import { CartProvider } from './contextApi/cartContext';
 
 export const App = () => {
 
@@ -28,8 +29,10 @@ export const App = () => {
 
   return (
     <>
+      <CartProvider>
       {routing}
       {/* <ToastContainer /> */}
+      </CartProvider>
     </>
   );
 }

@@ -1,11 +1,28 @@
-import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom';
+import DataTable from 'react-data-table-component';
 import { DashboardBradCrumbs } from '../DashboardBradCrumbs';
 
 export const Cart = () => {
 
+    
     /** cart list */
     const carts = JSON.parse(localStorage.getItem('carts')) || []
+    
+    const deleteCart = (id) => {
+        // Step 1: Retrieve existing JSON data from localStorage
+        var jsonData = JSON.parse(localStorage.getItem("carts")) || [];
+        console.log("json data", id);
+        // Step 2: Identify and remove the specific item by its index
+        function removeItemByIndex(indexToRemove) {
+            jsonData.splice(indexToRemove, 1);
+        }
+
+        // Example: Remove item at index 2
+        removeItemByIndex(id);
+
+        // Step 3: Save the updated JSON data back to localStorage
+        localStorage.setItem("cars", JSON.stringify(jsonData));
+    }
 
     const columns = [
         {
@@ -39,27 +56,23 @@ export const Cart = () => {
             minWidth: "150px",
             cell: (row) => (
                 <div className="flex gap-1">
-                    <Link to={`/dashboard/jobs/show/${row._id}`}>
+                    {/* <Link to={`/dashboard/jobs/show/${row.id}`}>
                         <span class="material-symbols-outlined text-gray-600 text-[20px]">
                             visibility
                         </span>
-                    </Link>
-                    <Link to={`/dashboard/jobs/applicants/${row._id}`}>
+                    </Link> */}
+                    <span onClick={()=> deleteCart(row.id)} >
                         <span class="material-symbols-outlined text-gray-600 text-[20px]">
                             delete
                         </span>
-                    </Link>
+                    </span>
                 </div>
             ),
         },
     ];
 
-
-
     return <>
-
         <DashboardBradCrumbs name="My Cart Item"></DashboardBradCrumbs>
-
         <div className=' shadow-md p-4'>
             <DataTable
                 columns={columns}
