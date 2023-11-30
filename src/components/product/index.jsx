@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Images } from '../../utils/images'
 import { useCart } from '../../contextApi/cartContext'
+import { ImageShow } from '../../utils/helper'
 
 export const Product = (props) => {
 
@@ -38,9 +39,9 @@ export const Product = (props) => {
     return <>
         {/* https://www.youtube.com/watch?v=H8OjG7ChqoE&ab_channel=ThapaTechnical */}
         <div className='shadow rounded-xl my-2 relative bg-white'>
-            <img src={Images.Logo} style={{ width: "100%" }} className='mx-auto h-42' alt="" />
+            <img src={ImageShow(props.image)} style={{ width: "100%" }} className='mx-auto h-40' alt="" />
             <div className='px-4  '>
-                <h3 className=' font-heading md:text-[13px] text-[11px] text-primary'><Link to="/product/show/1">Mango Tree</Link></h3>
+                <h3 className=' font-heading md:text-[13px] text-[11px] text-primary'><Link to={`/product/show/${props.product_id}`}>{props.title}</Link></h3>
 
                 <div className="flex items-center space-x-1 md:py-1 py-2">
                     <svg className="w-3 h-3 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
@@ -61,12 +62,12 @@ export const Product = (props) => {
                 </div>
 
                 <div className='flex items-center justify-between mb-3'>
-                    <h3 className=' font-heading md:text-[11px] text-[8px]'>400TK</h3>
+                    <h3 className=' font-heading md:text-[11px] text-[8px]'>{props.price} TK</h3>
                     <span onClick={() => handleAddToCart(product1)} className=' border rounded-lg px-2 font-heading md:text-[11px] md: text-[8px] py-1 border-primary'>Add To Card</span>
                 </div>
 
                 {/* love */}
-                <p onClick={() => handleAddToCart(product2)} className='absolute right-0 inset-y-0 p-3  '>
+                <p onClick={() => handleAddToCart(product2)} className='absolute right-0 inset-y-0 p-3'>
                     {
                         props.love === "true" ? <img src={Images.Love} className='h-6 w-6' alt="" /> : <span class=" text-gray-500 material-symbols-outlined">
                             favorite

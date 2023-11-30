@@ -1,8 +1,30 @@
 import { Images } from '../../utils/images'
+import { useCallback, useEffect, useState } from 'react'
 import { Product } from '../../components/product'
+import {NetworkServices} from '../../network/index'
+import { networkErrorHandeller } from '../../utils/helper'
 import { PrimaryButton, WatchButton } from '../../components/button'
 
 export const Home = () => {
+    const [products, setProducts] = useState([])
+
+    /** fetch product */
+    const fetchProduct = useCallback(async()=> {
+        try {
+            const response = await NetworkServices.Product.index()
+           
+            if (response.status === 200) {
+                setProducts(response.data.data)
+            }
+        } catch (error) {
+            networkErrorHandeller(error)
+        }
+    }, [])
+
+    useEffect(()=> {
+        fetchProduct()
+    },[])
+
     return <>
         {/* banner section  start here */}
         <section className='container my-6 md:my-24'>
@@ -100,26 +122,13 @@ export const Home = () => {
 
                     {/* product list */}
                     <section className='grid grid-cols-2 md:grid-cols-5 gap-4 my-4'>
-                        <Product love="true"></Product>
-                        <Product love="false"></Product>
-                        <Product love="true"></Product>
-                        <Product love="false"></Product>
-                        <Product love="false"></Product>
-                        <Product love="false"></Product>
-                        <Product love="false"></Product>
-                        <Product love="false"></Product>
-                        <Product love="false"></Product>
-                        <Product love="false"></Product>
-                        <Product love="false"></Product>
-                        <Product love="true"></Product>
-                        <Product love="false"></Product>
-                        <Product love="false"></Product>
-                        <Product love="false"></Product>
-                        <Product love="false"></Product>
-                        <Product love="false"></Product>
-                        <Product love="false"></Product>
-                        <Product love="false"></Product>
-                        <Product love="false"></Product>
+                        {
+                            products.map((product, i) => {
+                                return <Product key={i} {...product} ></Product>
+                            })
+                            
+                        }
+                        
                     </section>
                 </div>
             </section>

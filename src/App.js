@@ -18,7 +18,7 @@ export const App = () => {
       { path: "*", element: <Navigate to="/404" /> },
       { path: "", element: <Home /> },
       { path: "shop", element: <Shop /> },
-      { path: "product/show/1", element: <ProductShow /> },
+      { path: "product/show/:id", element: <ProductShow /> },
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
       { path: "404", element: <FourOFour /> },
