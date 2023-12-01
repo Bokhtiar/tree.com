@@ -134,7 +134,7 @@ export const Home = () => {
                             !isLoading ? 
                             products.map((product, i) => {
                                 return <Product key={i} {...product} ></Product>
-                            }) 
+                            })
                                 : <>
                                     <ProductLoading />
                                     <ProductLoading />
