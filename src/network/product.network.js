@@ -13,3 +13,8 @@ export const show = async (id) => {
 export const PriceFilter = async(payload) => {
     return await publicRequest.post('product/price/filter', payload)
 }
+
+/** product search */
+export const ProductSearch = async(query) =>{
+    return await publicRequest.post('product/serach', query)
+}

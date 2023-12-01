@@ -14,8 +14,6 @@ export const ProductSidebar = (props) => {
     }
 
     /** price filter */
-   
-        
     const handleSubmit = (event) => {
         event.preventDefault();
         const payload = {
@@ -24,9 +22,6 @@ export const ProductSidebar = (props) => {
         }
         props.onChildPriceFilter(payload)
     }
-    
-
-    
 
     /** category list */
     const fetchCategory = useCallback(async () => {
@@ -44,42 +39,44 @@ export const ProductSidebar = (props) => {
         fetchCategory()
     }, [])
 
-    return <section className="shadow px-2">
-        <h4 className=" font-heading text-primary py-3">Filter</h4>
+    return <section className="shadow">
+        <h4 className=" font-heading text-primary py-3 px-2">Filter</h4>
         <hr class="mt-[-10px] border-gray-200 sm:mx-auto dark:border-gray-700" />
 
         {/* category */}
         <section className="my-4">
-            <h4 className=" font-heading text-primary py-3">Category</h4>
-
-            <div className="join join-vertical w-full">
+            <h4 className=" font-heading text-primary py-3 px-2">Category</h4>
+            <div class="flex flex-col w-full">
                 {
                     categories ?
                         categories.map((category, i) => {
-                            return <div className="collapse collapse-arrow  border border-base-300 my-2 ">
-                                <input type="radio" name="my-accordion-4" />
-                                <div className="collapse-title h-2 text-sm font-content font-semibold">
-                                    {category.category_name}
+                            return <button class="group border border-gray-100">
+                                <div class="flex items-center justify-between h-12 px-3 font-semibold hover:bg-gray-200">
+                                    <span class="truncate">{category.category_name}</span>
+                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
                                 </div>
-                                <div className="collapse-content">
+                                <div class="max-h-0 overflow-hidden duration-300 group-focus:max-h-40">
                                     {
-                                        category.childs.map((cat, i) => {
-                                            return <li className=' cursor-pointer' onClick={() => handleCategory(cat.category_id)} > {cat.category_name} </li>
-                                        })
+                                        category.childs.length > 0 ?
+                                            category.childs.map((cat, i) => {
+                                                return <span onClick={() => handleCategory(cat.category_id)} class="flex items-center h-8 px-4 text-sm hover:bg-gray-200" href="">{cat.category_name}</span>
+                                            })
+                                            : "Not Yet Data"
                                     }
-                                </div>
-                            </div>
-                        })
-                        : <>
-                            <MenuLoading />
-                            <MenuLoading />
-                            <MenuLoading />
-                            <MenuLoading />
-                            <MenuLoading />
-                            <MenuLoading />
-                            <MenuLoading />
-                        </>
 
+                                </div>
+                            </button>
+                        }) : <div className='px-2'>
+                            <MenuLoading />
+                            <MenuLoading />
+                            <MenuLoading />
+                            <MenuLoading />
+                            <MenuLoading />
+                            <MenuLoading />
+                            <MenuLoading />
+                        </div>
                 }
             </div>
         </section>
@@ -87,13 +84,13 @@ export const ProductSidebar = (props) => {
         <hr class="mt-[-10px] border-gray-200 sm:mx-auto dark:border-gray-700" />
 
         {/* price filter */}
-        <h4 className=" font-heading text-primary py-3">Pricing</h4>
-        <form onSubmit={handleSubmit}>
-        <div className="flex gap-3">
-            <input type="number" onChange={(e) => setMinPrice(e.target.value)} className="w-20 border border-primary rounded-md px-2" placeholder="0" name="" id="" />
-            <input type="number" onChange={(e) => setMaxPrice(e.target.value)} className="w-20 border border-primary rounded-md px-2" placeholder="1000" name="" id="" />
-        </div>
-        <button type='submit' className="w-full bg-primary rounded-md my-2 text-white font-content">Pricing</button>
+        <h4 className=" font-heading text-primary py-3 px-2">Pricing</h4>
+        <form onSubmit={handleSubmit} className='px-2'>
+            <div className="flex gap-3">
+                <input type="number" onChange={(e) => setMinPrice(e.target.value)} className="w-20 border border-primary rounded-md px-2" placeholder="0" name="" id="" />
+                <input type="number" onChange={(e) => setMaxPrice(e.target.value)} className="w-20 border border-primary rounded-md px-2" placeholder="1000" name="" id="" />
+            </div>
+            <button type='submit' className="w-full bg-primary rounded-md my-2 text-white font-content">Pricing</button>
         </form>
     </section>
 }
