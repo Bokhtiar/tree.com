@@ -6,8 +6,9 @@ import { Contact } from './pages/contact';
 import { permittedRoutes } from "./routes";
 import { MainLayout } from "./layouts/main.layout";
 import { Navigate, useRoutes } from "react-router-dom";
-import { ProductShow } from './components/product/show';
+
 import { CartProvider } from './contextApi/cartContext';
+import { ProductShow } from './pages/shop/show';
 
 export const App = () => {
 

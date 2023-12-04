@@ -6,7 +6,7 @@ export const index = async () => {
 };
 
 /** category has assign product */
-export const categoryHasAssignProduct = async(category_id) => {
-    return await publicRequest.get(`/category/product/${category_id}`);
+export const categoryHasAssignProduct = async(category_id, page) => {
+    return await publicRequest.get(`/category/product/${category_id} +"?page="${page}`);
 }
 

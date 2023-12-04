@@ -1,33 +1,36 @@
-import { Product } from "."
-import { Images } from "../../utils/images"
+
+
 import { useCallback, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"
+import { NetworkServices } from "../../network/index";
+import { Product } from "../../components/product";
 import { ImageShow, networkErrorHandeller } from "../../utils/helper";
-import {NetworkServices} from '../../network/index'
+import { Images } from "../../utils/images";
+
 
 export const ProductShow = () => {
     const { id } = useParams();
     const [product, setProduct] = useState()
 
     /** single resource */
-    const fetchData = useCallback(async()=> {
+    const fetchData = useCallback(async () => {
         try {
             const response = await NetworkServices.Product.show(id)
             if (response.status === 200) {
                 setProduct(response.data.data)
-            } 
+            }
         } catch (error) {
             networkErrorHandeller(error)
         }
-    },[])
+    }, [])
 
-    useEffect(()=> {
+    useEffect(() => {
         fetchData()
-    },[])
+    }, [])
     console.log("product", product);
 
     return <>
-    {
+        {
             product ? <section className="">
                 <section className="grid grid-cols-1 md:grid-cols-2 gap-3 container">
                     {/* product image */}
@@ -60,6 +63,18 @@ export const ProductShow = () => {
                             </span>
                             <span>{product?.category?.category_name}</span>
                         </p>
+                        {/* size */}
+                        <div>
+                            {
+                                JSON.parse(product.size).map((size, i) => {
+                                    return <div className="flex items-center gap-5">
+                                        <input value={`size: ${size?.size} price: ${size?.price}`} type="checkbox" name="" id="" />
+                                        <span>{size?.size}</span>
+                                        <span>{size?.price}</span>
+                                    </div>
+                                })
+                            }
+                        </div>
 
                         <Link to="" className='font-bold border rounded-lg px-4 font-content md:text-[12px] text-[12px] py-1 border-primary hover:bg-primary hover:text-white transition delay-150 text-gray-600'>Add To Card</Link>
                         <h4 className="mt-5 font-heading text-gray-700 ">Product Details</h4>
@@ -162,7 +177,7 @@ export const ProductShow = () => {
                     </section>
                 </div>
             </section> : <>loading</>
-    }
-       
+        }
+
     </>
 }

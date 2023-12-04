@@ -66,9 +66,6 @@ export const Shop = () => {
         }
     }
 
-
-  
-
     useEffect(() => {
         fetchProduct()
     }, [fetchProduct])
